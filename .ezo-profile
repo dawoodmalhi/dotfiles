@@ -76,26 +76,11 @@ function srm_crt(){
 	CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 	git push
 	git stash -u
-	git checkout feature/staging_branch_p11
+	git checkout feature/staging_branch_p12
 	git pull
 	git pull origin $CURRENT_BRANCH
 	git push
 	git checkout $CURRENT_BRANCH
-	git stash pop
-}
-
-function pctcas(){
-	CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-	git push
-	git stash -u
-	git checkout feature/26178_combined_branch_for_unconsume
-	git pull origin $CURRENT_BRANCH
-	git push
-	git checkout feature/staging_branch_p11
-	git pull
-	git pull origin feature/26178_combined_branch_for_unconsume
-	git push
-	git checkout feature/26178_combined_branch_for_unconsume
 	git stash pop
 }
 
@@ -104,7 +89,7 @@ function co_mbr(){
 }
 
 function co_stbr(){
-	git checkout feature/staging_branch_p11
+	git checkout feature/staging_branch_p12
 }
 
 function crt_br(){
